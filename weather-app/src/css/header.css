@@ -1,0 +1,37 @@
+/* HEADER CSS */
+
+header {
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    padding: 1rem 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav h1 {
+    font-size: 1.65rem;
+}
+
+header nav #city-input {
+    width: 15%;
+    transition: 0.5s ease-in;
+    padding: 0.3rem;
+    text-align: center;
+    border: 2px solid var(--bg-light);
+    border-radius: 10px;
+    outline: none;
+}
+
+header nav #city-input:focus {
+    width: 33%;
+    transition: 0.5s ease-in;
+}
+
+header nav #unit-menu {
+    padding: 0.3rem;
+    border: 2px solid var(--bg-light);
+}
