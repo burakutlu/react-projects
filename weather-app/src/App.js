@@ -1,4 +1,4 @@
-
+import Header from './components/Header'
 import { useEffect, useState } from 'react';
 import './css/app.css'
 
@@ -15,16 +15,11 @@ function getWeather(time, location) {
 /* EXPERIMENTAL */
 function getUserLocation() {
     if (navigator.geolocation) {
-        console.log(navigator.geolocation.getCurrentPosition(showPosition));
+        console.log(navigator.geolocation.getCurrentPosition());
     } else {
         console.log("Geolocation not available.");
     }
 }
-
-function showPosition(position) {
-    console.log(position);
-}
-
 
 function App() {
     const [lat, setLat] = useState("null");
@@ -36,19 +31,7 @@ function App() {
 
 
     return (
-        <main>
-        <section id="weather-main">
-            <div className="weather-top">
-
-            </div>
-            <div className="weather-second">
-
-            </div>
-            <div className="weather-ma">
-
-            </div>
-        </section>
-        </main>
+        <Header />
     );
 }
 
