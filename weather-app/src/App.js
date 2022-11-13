@@ -10,28 +10,22 @@ const api = "efaf6840a7d6dc7f81b587c91a469223"
 
 
 function App() {
-  const [lat, setLat] = useState("null");
-  const [lng, setLng] = useState("null");
+  const [city, setCity] = useState("")
+  const [unit, setUnit] = useState("celcius")
 
   function getWeather(time, location) {
     fetch(url + time + `?access_key=${api}&query=${location}`)
       .then((response) => response.json())
       .then((data) => console.log(data));
   }
-  
-  /* EXPERIMENTAL */
-  function getUserLocation() {
-    if (navigator.geolocation) {
-      console.log(navigator.geolocation.getCurrentPosition());
-    } else {
-      console.log("Geolocation not available.");
-    }
-  }
 
+  const getCity = (text) => setCity(text)
+  const getUnit = (unit) => setUnit(unit)
+  
   return (
     <>
-      <Header />
-      <Main lat={lat} lng={lng}/>
+      <Header handleCity={getCity} handleUnit={getUnit} />
+      <Main />
     </>
   );
 }
