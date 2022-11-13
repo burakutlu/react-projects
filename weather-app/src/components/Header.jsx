@@ -1,20 +1,23 @@
 import React from 'react'
-
 import '../css/style.css'
 import '../css/header.css'
 
-function Header() {
+function Header({ handleCity, handleUnit }) {
+
   return (
     <header>
         <nav>
             <h1>Burak's Weather</h1>
             <div></div>
-            <input type="text" id="city-input" placeholder="City Name" />
+            <input 
+              onChange={(e) => handleCity(e.target.value)} type="text" 
+              id="city-input" 
+              placeholder="City Name" />
             <div></div>
-            <select id="unit-menu">
-                <option value="unit-celc">Celcius</option>
-                <option value="unit-fahr">Fahrenheit</option>
-                <option value="unit-kelvin">Kelvin</option>
+            <select id="unit-menu" onChange={(select) => handleUnit(select.target.value)}>
+                <option value="celcius">Celcius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
             </select>
         </nav>
     </header>
